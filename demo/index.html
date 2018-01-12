@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js ES6 Webpack Project Starter</title>
+    <style>
+        body {
+            padding: 100px 30px;
+            margin: 0;
+            height: 5000px;
+        }
+
+        .header {
+            width: 100%;
+            left: 0;
+            padding: 30px;
+            position: fixed;
+            right: 0;
+            top: 0;
+
+            z-index: 10;
+            border-bottom: 1px solid #ccc;
+            background: #DDD;
+        }
+        .header-unpinned {
+            transition: all .3s;
+            transform: translateY(-100%);
+        }
+        .header-pinned {
+            transition: all .1s linear;
+            transform: translateY(0);
+        }
+        .header-nottop {
+            background: #000;
+            color: #fff;
+            padding: 10px 30px;
+        }
+
+        .widget {
+            width: 100px;
+            right: 20px;
+            padding: 30px;
+            position: fixed;
+            bottom: 20px;
+            transition: all .3s;
+            z-index: 10;
+            border: 1px solid #ccc;
+            background: #DDD;
+        }
+        .widget-unpinned {
+            transform: translateX(100%);
+        }
+        .widget-pinned {
+            transform: translateX(0);
+        }
+
+        .widget-nottop {
+        }
+    </style>
+</head>
+<body class="body">
+<header id="header" class="header">
+    fsgdfg
+</header>
+<div id="widget" class="widget">
+    fsgdfg
+</div>
+
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br><br>
+slqdjkfhlqkjfhlskjhfqsd <br>
+fdlmkgjdsmlkgjdfmlkgjsdmflkgjsdmlfkgjfsdmlkgjsdfmlk<br>
+fglkjhsdfgkjdlhglkjdfhg<br>
+<script src="../dist/js/scrollback.js"></script>
+<script>
+    var header = document.querySelector("header");
+    var headerScrollBack = new scrollback(header, {
+        tolerance: {
+            up: 0,
+            down: 0
+        },
+        offset: 80,
+        scroller: window,
+        classes: {
+            initial: 'header',
+            pinned: 'header-pinned',
+            unpinned: 'header-unpinned',
+            scrolled: 'header-nottop'
+        }
+    });
+
+
+     var widget = document.getElementById("widget");
+     var widgetScrollBack = new scrollback(widget, {
+         tolerance: {
+             up: 0,
+             down: 0
+         },
+         offset: 0,
+         disable: 'mobile',
+         scroller: window,
+         classes: {
+             initial: 'widget',
+             pinned: 'widget-pinned',
+             unpinned: 'widget-unpinned',
+             scrolled: 'widget-nottop'
+         }
+     });
+</script>
+</body>

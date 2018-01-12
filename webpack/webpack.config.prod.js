@@ -1,6 +1,5 @@
-'use strict';
+'use strict'
 
-const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.config.base')
@@ -9,26 +8,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const prodWebpackConfig = merge(baseWebpackConfig, {
     devtool: false,
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-        new webpack.NoEmitOnErrorsPlugin(),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './public/index.html',
-            inject: true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-                removeEmptyAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true,
-            }
-        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
