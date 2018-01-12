@@ -122,24 +122,24 @@
             unpinned: 'header-unpinned',
             scrolled: 'header-nottop'
         }
-    });
+    })
 
 
-     var widget = document.getElementById("widget");
-     var widgetScrollBack = new scrollback(widget, {
-         tolerance: {
-             up: 0,
-             down: 0
-         },
-         offset: 0,
-         disable: 'mobile',
-         scroller: window,
-         classes: {
-             initial: 'widget',
-             pinned: 'widget-pinned',
-             unpinned: 'widget-unpinned',
-             scrolled: 'widget-nottop'
-         }
-     });
+    var widget = document.getElementById("widget")
+    var widgetScrollBack = new scrollback(widget, {
+        tolerance: {
+            up: 0,
+            down: 0
+        },
+        offset: 0,
+        disable: 'mobile',
+        scroller: window,
+        classes: {
+            initial: 'widget',
+            pinned: 'widget-pinned',
+            unpinned: 'widget-unpinned',
+            scrolled: 'widget-nottop'
+        }
+    })
 </script>
 </body>

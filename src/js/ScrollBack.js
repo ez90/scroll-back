@@ -19,14 +19,12 @@ const scrollBackOptions = {
 export default class ScrollBack {
 
     constructor(element, options = {}) {
-        // Merge options
         const finalOptions = Object.assign(scrollBackOptions, options)
 
-        // Set class attributes
         this.lastKnownScrollY = 0
         this.currentScrollY = 0
         this.isPinned = true
-        this.hasNoTopClass = false
+        this.hasNotTopClass = false
         this.ticking = false
         this.element = element
         this.tolerance = finalOptions.tolerance
@@ -38,14 +36,11 @@ export default class ScrollBack {
         this.isDisabled = this.isDisabled(finalOptions.disable)
         this.isBrowserSupported = this.isBrowserSupported()
 
-        console.log(this.isDisabled)
-
-        // Init
         this.init()
     }
 
     init() {
-        if (!this.isDisabled) { //  || !this.isBrowserSupported
+        if (!this.isDisabled || !this.isBrowserSupported) {
             this.bindEventListeners()
         }
     }
@@ -60,7 +55,7 @@ export default class ScrollBack {
             (optionDisable === 'phone' && DeviceDetector.phone()) ||
             (optionDisable === 'tablet' && DeviceDetector.tablet()) ||
             (typeof optionDisable === 'function' && optionDisable() === true)
-    };
+    }
 
     isToleranceExceeded() {
         return Math.abs(this.currentScrollY - this.lastKnownScrollY) >= this.tolerance[this.scrollDirection]
@@ -119,13 +114,13 @@ export default class ScrollBack {
         }
 
         if (this.currentScrollY > this.offset) {
-            if (this.isPinned && !this.hasNoTopClass) {
+            if (this.isPinned && !this.hasNotTopClass) {
                 this.element.classList.add(this.classes.scrolled)
-                this.hasNoTopClass = true
+                this.hasNotTopClass = true
             }
         } else {
             this.element.classList.remove(this.classes.scrolled)
-            this.hasNoTopClass = false
+            this.hasNotTopClass = false
         }
 
         this.lastKnownScrollY = this.currentScrollY
