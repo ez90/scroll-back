@@ -13,15 +13,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         hot: true,
         compress: true,
     },
-    // plugins: [
-    //     new webpack.HotModuleReplacementPlugin(),
-    //     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-    //     new webpack.NoEmitOnErrorsPlugin(),
-    //     new HtmlWebpackPlugin({
-    //         filename: 'index.html',
-    //         template: './demo/index.html'
-    //     })
-    // ]
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+        new webpack.NoEmitOnErrorsPlugin(),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './demo/index.html'
+        })
+    ]
 })
 
 module.exports = devWebpackConfig
