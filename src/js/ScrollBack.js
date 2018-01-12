@@ -1,3 +1,5 @@
+import DeviceDetector from './utils/DeviceDetector'
+
 const scrollBackOptions = {
     tolerance: {
         up: 0,
@@ -5,11 +7,12 @@ const scrollBackOptions = {
     },
     offset: 0,
     scroller: window,
+    disable: false,
     classes: {
         initial: 'scrollback',
         pinned: 'scrollback-pinned',
         unpinned: 'scrollback-unpinned',
-        scrolled: 'scrollback-scrolled'
+        scrolled: 'scrollback-nottop'
     }
 }
 
@@ -22,8 +25,8 @@ export default class ScrollBack {
         // Set class attributes
         this.lastKnownScrollY = 0
         this.currentScrollY = 0
-        this.isPinned = true;
-        this.hasNoTopClass = false;
+        this.isPinned = true
+        this.hasNoTopClass = false
         this.ticking = false
         this.element = element
         this.tolerance = finalOptions.tolerance
@@ -32,14 +35,32 @@ export default class ScrollBack {
         this.offset = finalOptions.offset
         this.scrollDirection = ''
         this.toleranceExceeded = false
+        this.isDisabled = this.isDisabled(finalOptions.disable)
+        this.isBrowserSupported = this.isBrowserSupported()
+
+        console.log(this.isDisabled)
 
         // Init
-        this.init(element)
+        this.init()
     }
 
     init() {
-        this.bindEventListeners()
+        if (!this.isDisabled) { //  || !this.isBrowserSupported
+            this.bindEventListeners()
+        }
     }
+
+    isBrowserSupported() {
+        return document.all && !window.atob
+    }
+
+    isDisabled(optionDisable) {
+        return optionDisable === true ||
+            (optionDisable === 'mobile' && DeviceDetector.mobile()) ||
+            (optionDisable === 'phone' && DeviceDetector.phone()) ||
+            (optionDisable === 'tablet' && DeviceDetector.tablet()) ||
+            (typeof optionDisable === 'function' && optionDisable() === true)
+    };
 
     isToleranceExceeded() {
         return Math.abs(this.currentScrollY - this.lastKnownScrollY) >= this.tolerance[this.scrollDirection]
@@ -97,13 +118,12 @@ export default class ScrollBack {
             this.pin()
         }
 
-        if(this.currentScrollY > this.offset){
-            if(!this.isPinned && !this.hasNoTopClass ) {
-                console.log('addClass')
+        if (this.currentScrollY > this.offset) {
+            if (this.isPinned && !this.hasNoTopClass) {
                 this.element.classList.add(this.classes.scrolled)
                 this.hasNoTopClass = true
             }
-        } else  {
+        } else {
             this.element.classList.remove(this.classes.scrolled)
             this.hasNoTopClass = false
         }
@@ -124,6 +144,6 @@ export default class ScrollBack {
     }
 
     bindEventListeners() {
-        document.addEventListener('scroll', this.onScroll.bind(this), false)
+        window.addEventListener('scroll', this.onScroll.bind(this), false)
     }
 }
